@@ -1,5 +1,5 @@
 # GSoC 2020: Pre-conditioners applied to ROOT compression algorithms
-https://summerofcode.withgoogle.com/projects/#5798059117641728
+<https://summerofcode.withgoogle.com/projects/#5798059117641728>
 
 **Author**: [Keisuke Kamahori](https://github.com/kamahori)
 
@@ -40,8 +40,9 @@ LZ4BS also improved the performance for RNTuple files.
 
 ### Compression Time
 The time required in compressing files with LZ4BS was at most about 30% longer than with LZ4, which could be seen as reasonable considering the big improvement in the compression ratio.
+
 | File/Level | LZ4 (ms) | LZ4BS (ms) | Ratio |
-| :---: | :---: | :---: | :---: |
+|:-------:|:-------:|:-------:|:-------:|
 | LHCb/1 | 1221.56 | 1400.14 | +14.6% |
 | LHCb/6 | 16639.5 | 22145.5 | **+33.1%** |
 | LHCb/9 | 20609.3 | 27557.8 | **+33.7%** |
@@ -54,16 +55,18 @@ Branches (or pages for RNTuple) that consist only of small & positive `int` valu
 ![Branch](img/branch.png)
 
 On the other hand, `float` and `bool` values tend to have worse compression ratio than `int` values as shown in the table below, possibly because adjacent bytes are unlikely to correlate for such data types.
+
 | Type | Total Size in LZ4 | Total Size in LZ4BS | Ratio |
-| :---: | :---: | :---: | :---: |
+|:-------:|:-------:|:-------:|:-------:|
 | int | 216550264 | 78717632 | **-63.7%** |
 | float | 4032419451 | 3198921162 | -21.7% |
 | bool | 270378042 | 216623912 | -20.0% |
 
 ### ZSTD + Bitshuffle
 Besides LZ4, Bitshuffle was tested along with ZSTD, but it did not result in the improvement of performance. As shown in this table, Bitshuffle reduced filesize with ZSTD only 5% even in the best scenario.
+
 | File | Size in ZSTD | Size in ZSTD+BS | Ratio |
-| :---: | :---: | :---: | :---: |
+|:-------:|:-------:|:-------:|:-------:|
 | LHCb | 120601097 | 114500217 |-5.1% |
 | NanoAOD | 1588405426 | 1623656639 | +2.2% |
 | ATLAS (TTree) | 1981475287 | 1980677449 | -0.0% |
@@ -71,7 +74,7 @@ Besides LZ4, Bitshuffle was tested along with ZSTD, but it did not result in the
 
 ## Community
 I had several opportunities to participate in ROOT I/O Meetings and present my progress to community members. Here is the list of meetings that I attended:
-- https://indico.cern.ch/event/877191/ 
-- https://indico.cern.ch/event/877195/
-- https://indico.cern.ch/event/877196/
-- https://indico.cern.ch/event/877200/
+- <https://indico.cern.ch/event/877191/>
+- <https://indico.cern.ch/event/877195/>
+- <https://indico.cern.ch/event/877196/>
+- <https://indico.cern.ch/event/877200/>
